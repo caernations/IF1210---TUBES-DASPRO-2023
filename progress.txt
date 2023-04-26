@@ -1,0 +1,35 @@
+yang udah OK:
+1. login (OK)
+2. logout (OK)
+
+
+yang blm OK:
+3. summonJin
+
+4. hilangkanJin
+
+5. ubahTipeJin
+
+6. jinPembangun
+
+7. jinPengumpul
+
+8. batchKumpul
+
+9. batchBangun
+
+10. ambilLaporanJin
+
+11. ambilLaporanCandi
+
+12. hancurkanCandi
+
+13. ayamBerkokok
+
+14. load
+
+15. save
+
+16. help
+
+17. exit
