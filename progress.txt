@@ -5,15 +5,13 @@ OK:
 4. hilangkanJin (OK)
 5. ubahTipeJin (OK)
 # tambahin status jin dan keterangan kl sempet
+7. jinPengumpul
+8. batchKumpul
 
 semi OK:
 
 yang blm OK:
 6. jinPembangun
-
-7. jinPengumpul
-
-8. batchKumpul
 
 9. batchBangun
 

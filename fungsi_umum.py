@@ -96,3 +96,7 @@ username = None
 matriksuser, banyakuser = importcsv('user.csv', delimeter=";")
 matrikscandi, banyakcandi = importcsv('candi.csv', delimeter=";")
 matriksbahanbangunan, banyakbahanbangunan = importcsv('bahan_bangunan.csv', delimeter=";")
+
+intpasir = int(matriksbahanbangunan[0][2])
+intbatu = int(matriksbahanbangunan[1][2])
+intair = int(matriksbahanbangunan[2][2])

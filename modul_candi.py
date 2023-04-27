@@ -1,4 +1,6 @@
 import fungsi_umum
+from os import system
+import random
 
 # F06 - JIN PEMBANGUN
 def jinPembangun(matriksbahanbangunan, matrikscandi):
@@ -38,35 +40,75 @@ def jinPembangun(matriksbahanbangunan, matrikscandi):
             for i in range(fungsi_umum.lenarr(bahan_diperlukan)):
                 matriksbahanbangunan +=[[nama_bahan[i],str(f"dipakai oleh {fungsi_umum.username} (namun candi yang udah dibangun sudah melebihi)"),str(bahan_diperlukan[i])]]
             print("Candi berhasil dibangun")
-            print("Sisa candi yang perlu dibangun : 0") 
+            print("Sisa candi yang perlu dibangun: 0") 
 
             
 # F07 - JIN PENGUMPUL
-def jinPengumpul(matriksbahanbangunan):
-    import random
-    bahan_bangunan = [random.randint(0,5), random.randint(0,5), random.randint(0,5)]
-    nama_bahan = ["pasir", "batu", "air"]
-    for i in range(fungsi_umum.lenarr(bahan_bangunan)):
-            matriksbahanbangunan += [[nama_bahan[i],str(f"dikumpulkan oleh {fungsi_umum.username}"),str(bahan_bangunan[i])]]
-    print(f"Jin {fungsi_umum.username} menemukan {bahan_bangunan[0]} pasir {bahan_bangunan[1]} batu {bahan_bangunan[2]} air")
+def jinPengumpul():
+    system('pause')
+    system('cls')
+    print ("JIN PENGUMPUL\n")
+
+    # Hasil jin pengumpul
+    pasirfound = random.randint(0, 5)
+    batufound = random.randint(0, 5)
+    airfound = random.randint(0, 5)
+
+    # Menambahkan hasil jin pengumpul ke dalam jumlah awal bahan bangunan
+    fungsi_umum.intpasir += pasirfound
+    fungsi_umum.intbatu += batufound
+    fungsi_umum.intair += airfound
+
+    # Assign nilai matriksbahanbangunan
+    fungsi_umum.matriksbahanbangunan[0][2] = str(fungsi_umum.intpasir)
+    fungsi_umum.matriksbahanbangunan[1][2] = str(fungsi_umum.intbatu)
+    fungsi_umum.matriksbahanbangunan[2][2] = str(fungsi_umum.intair)
+
+    print(f"Jin {fungsi_umum.username} menemukan {pasirfound} pasir, {batufound} batu, dan {airfound} air.")
+    print(fungsi_umum.matriksbahanbangunan)
+    system('pause')
+    system('cls')
 
 
 # F08 - BATCH KUMPUL
-def batchKumpul(role, matriksuser):
-    jin_pengumpul = 0
-    for i in range(1, fungsi_umum.lenarr(matriksuser)):
-        if matriksuser[i][2] == "Jin_Pengumpul":
-            jin_pengumpul += 1
-    print(jin_pengumpul)
-    if jin_pengumpul == 0:
-        print("Bangun gagal. Anda tidak punya jin pengumpul. Silahkan summon terlebih dahulu.")
+def batchKumpul():
+    system('pause')
+    system('cls')
+    print("BATCH KUMPUL\n")
+    banyakjinpengumpul = 0
+    pasirbatchkumpul = 0
+    batubatchkumpul = 0
+    airbatchkumpul = 0
+
+    for i in range(fungsi_umum.banyakuser):
+        if fungsi_umum.matriksuser[i][2] == "Jin_Pengumpul":
+            banyakjinpengumpul += 1
+
+    if banyakjinpengumpul == 0:
+        print("Kumpul gagal. Anda tidak punya jin pengumpul. Silahkan summon terlebih dahulu.")
     else:
-        for i in range(jin_pengumpul):
-            import random
-            bahan_bangunan = [random.randint(0,5), random.randint(0,5), random.randint(0,5)]
-            nama_bahan = ["pasir", "batu", "air"]
-            for i in range(fungsi_umum.lenarr(bahan_bangunan)):
-                matriksbahanbangunan +=[[nama_bahan[i],str(f"dikumpulkan oleh {fungsi_umum.username}"),str(bahan_bangunan[i])]]
+        print(f"Mengerahkan {banyakjinpengumpul} jin untuk mengumpulkan bahan.")
+        for i in range(banyakjinpengumpul):
+            pasirbatchkumpul += random.randint(0, 5)
+            batubatchkumpul += random.randint(0, 5)
+            airbatchkumpul += random.randint(0, 5)
+        
+        fungsi_umum.intpasir += pasirbatchkumpul
+        fungsi_umum.intbatu += batubatchkumpul
+        fungsi_umum.intair += airbatchkumpul
+
+        # Assign nilai matriksbahanbangunan
+        fungsi_umum.matriksbahanbangunan[0][2] = str(fungsi_umum.intpasir)
+        fungsi_umum.matriksbahanbangunan[1][2] = str(fungsi_umum.intbatu)
+        fungsi_umum.matriksbahanbangunan[2][2] = str(fungsi_umum.intair)
+
+        print(f"Jin menemukan total {pasirbatchkumpul} pasir, {batubatchkumpul} batu, dan {airbatchkumpul} air.")
+        system('pause')
+        system('cls')
+
+
+
+
 
 
 # F09 - BATCH BANGUN

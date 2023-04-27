@@ -140,7 +140,7 @@ def help(role):
             print("1. Jin Pengumpul\n2. Logout")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Jin Pengumpul":
-                modul_jin.jinPengumpul()
+                modul_candi.jinPengumpul()
             elif command == "2" or command == "Logout":
                 logout()
                 break
@@ -157,7 +157,7 @@ def help(role):
             print("1. Jin Pembangun\n2. Logout")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Jin Pembangun":
-                modul_jin.jinPembangun()
+                modul_candi.jinPembangun()
             elif command == "2" or command == "Logout":
                 logout()
                 break
