@@ -12,17 +12,17 @@ def ambilLaporanCandi():
     termurah = -1
     id_termahal = "-"
     id_termurah = "-"
-    for i in range(1, fungsi_umum.lenarr(fungsi_umum.datacandi)):
+    for i in range(1, fungsi_umum.lenarr(fungsi_umum.matrikscandi)):
         candi += 1
-        pasir += int(fungsi_umum.datacandi[i][2])
-        batu += int(fungsi_umum.datacandi[i][3])
-        air += int(fungsi_umum.datacandi[i][4])
-        harga = (10000 * int(fungsi_umum.datacandi[i][2]) + 15000 * int(fungsi_umum.datacandi[i][3]) + 7500 * int(fungsi_umum.datacandi[i][4]))
+        pasir += int(fungsi_umum.matrikscandi[i][2])
+        batu += int(fungsi_umum.matrikscandi[i][3])
+        air += int(fungsi_umum.matrikscandi[i][4])
+        harga = (10000 * int(fungsi_umum.matrikscandi[i][2]) + 15000 * int(fungsi_umum.matrikscandi[i][3]) + 7500 * int(fungsi_umum.matrikscandi[i][4]))
         if(harga > termahal):
-            id_termahal = fungsi_umum.datacandi[i][0]
+            id_termahal = fungsi_umum.matrikscandi[i][0]
             termahal = harga
         if(harga < termurah or termurah == -1):
-            id_termurah = fungsi_umum.datacandi[i][0]
+            id_termurah = fungsi_umum.matrikscandi[i][0]
             termurah = harga
     print("Total Candi: " + str(candi))
     print("Total Pasir yang digunakan: "+str(pasir))

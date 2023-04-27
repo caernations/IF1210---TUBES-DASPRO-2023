@@ -6,11 +6,23 @@ def lenstr(length):
         return 1 + lenstr(length[1:])
 
 
-def appendlist(list1, elemen):
-    list2 = [0 for i in range (lenarr + 1)]
-    for i in range (lenarr):
+def appendlist(list1, elemen, lenlist1):
+    list2 = [0 for i in range (lenlist1 + 1)]
+    for i in range (lenlist1):
         list2[i] = list1[i]
-    list2[lenarr] = elemen
+    list2[lenlist1] = elemen
+    return list2
+
+
+def removelist(list1, indeks, lenlist1):
+    list2 = [0 for i in range (lenlist1 - 1)]
+    for i in range (lenlist1):
+        if i == indeks:
+            continue
+        if i > indeks:
+            list2 = appendlist(list2, list1[i], i-1)
+        else:
+            list2 = appendlist(list2, list1[i], i)
     return list2
 
 
@@ -49,22 +61,15 @@ def importcsv(filename, delimeter = ';'):
         dataframe += [splitstr(line.replace('\n', ''), delimeter)]
         row += 1
     file.close()
-    return dataframe
+    return dataframe, row
 
-
-# matriksuser = importcsv('user.csv', delimeter=";")
-# matrikscandi = importcsv('user.csv', delimeter=";")
-# matriksbahanbangunan = importcsv('user.csv', delimeter=";")
-
-# usercsv = importcsv('user.csv', delimeter=";")
-# datauser = importcsv('user.csv', delimeter=";")
-# datacandi = importcsv('user.csv', delimeter=";")
 
 def writedu(filename, username, password, role):
     # Fungsi untuk menulis di datauser
     file = open(filename,'a')
     file.write("\n" + username + ";" + password + ";" + role)
     file.close()
+
 
 def tuliscsv(filename, data):
     if filename == "user.csv":
@@ -83,3 +88,11 @@ def tuliscsv(filename, data):
                 else:
                     file.write("\n")
     file.close()
+
+
+
+# VARIABLE
+username = None
+matriksuser, banyakuser = importcsv('user.csv', delimeter=";")
+matrikscandi, banyakcandi = importcsv('candi.csv', delimeter=";")
+matriksbahanbangunan, banyakbahanbangunan = importcsv('bahan_bangunan.csv', delimeter=";")

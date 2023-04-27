@@ -1,7 +1,7 @@
-import fungsi_umum
 from os import system
+import fungsi_umum
 
-# F03 - SUMMON JIN
+
 def summonJin():
     system('pause')
     system('cls')
@@ -37,6 +37,7 @@ def summonJin():
 
         password = input("Masukkan password jin:\n> ")
         while(fungsi_umum.lenstr(password) < 5 or fungsi_umum.lenstr(password) > 25):
+            system('pause')
             system('cls')
             print("Password panjangnya harus 5-25 karakter!\n")
             password = input("Masukkan password jin:\n> ")
@@ -60,6 +61,7 @@ def summonJin():
 
         password = input("Masukkan password jin:\n> ")
         while(fungsi_umum.lenstr(password) < 5 or fungsi_umum.lenstr(password) > 25):
+            system('pause')
             system('cls')
             print("Password panjangnya harus 5-25 karakter!\n")
             password = input("Masukkan password jin:\n> ")
@@ -76,70 +78,3 @@ def summonJin():
     print(f"Jin {usernamejin} berhasil dipanggil!\n")
     system('pause')
     system('cls')
-
-
-# F04 - HILANGKAN JIN
-def hilangkanJin() :
-    system('pause')
-    system('cls')
-    print ("HILANGKAN JIN\n")
-    usernamejin = input("Masukkan username jin: ")
-    for i in range (fungsi_umum.banyakuser) :
-        if fungsi_umum.matriksuser[i][2] == "Jin_Pengumpul" or fungsi_umum.matriksuser[i][2] == "Jin_Pembangun":
-            if fungsi_umum.matriksuser[i][0] == usernamejin:
-                system('cls')
-                konfirmasihapusjin = input(f"Apakah anda yakin ingin menghapus jin dengan username {usernamejin} (Y / N)?\n> ").title()
-                if konfirmasihapusjin == "Y":
-                    fungsi_umum.matriksuser = fungsi_umum.removelist(fungsi_umum.matriksuser, i, fungsi_umum.banyakuser)
-                    fungsi_umum.banyakuser -= 1
-                    system('cls')
-                    print("Jin telah berhasil dihapus dari alam gaib.")
-                    break
-                elif konfirmasihapusjin == "N":
-                    print("Jin masih belum terhapus")
-                else:
-                    print("Invalid command. Please try again.")
-            print("Tidak ada jin dengan username tersebut.")
-            break
-    system('pause')
-    system('cls')
-
-
-# F05 - UBAH TIPE JIN
-def ubahTipeJin():
-    system('pause')
-    system('cls')
-    print("UBAH TIPE JIN\n")
-    usernamejin = input("Masukkan username jin: ")
-    found = False
-    idx = -1 # inisialisasi idx dengan nilai default apabila username tidak ditemukan
-
-    for i in range(fungsi_umum.banyakuser):
-        if fungsi_umum.matriksuser[i][0] == usernamejin:
-            found = True
-            idx = i
-            break 
-    if not found:
-        print("Tidak ada jin dengan username tersebut.")
-        system('pause')
-        system('cls')
-        return
-
-    if fungsi_umum.matriksuser[idx][2] == "Jin_Pengumpul":
-        role_awal = "Pengumpul"
-        role_akhir = "Pembangun"
-    else:
-        role_awal = "Pembangun"
-        role_akhir = "Pengumpul"
-    konfirmasiubahtipejin = input((f"\nJin ini bertipe '{role_awal}'.\nIngin mengubah ke tipe '{role_akhir}' (Y / N)?\n> ")).title()
-    if konfirmasiubahtipejin == "Y":
-        if role_akhir == "Pembangun":
-            fungsi_umum.matriksuser[idx][2] = "Jin_Pembangun"
-        else:
-            fungsi_umum.matriksuser[idx][2] = "Jin_Pengumpul"
-        system('cls')
-        print("Jin telah berhasil diubah.")
-        system('pause')
-        system('cls')
-    else:
-        print("Jin gagal diubah")

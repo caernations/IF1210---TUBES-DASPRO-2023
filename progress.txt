@@ -1,15 +1,14 @@
-yang udah OK:
+OK:
 1. login (OK)
 2. logout (OK)
+3. summonJin (OK)
+4. hilangkanJin (OK)
+5. ubahTipeJin (OK)
+# tambahin status jin dan keterangan kl sempet
 
+semi OK:
 
 yang blm OK:
-3. summonJin
-
-4. hilangkanJin
-
-5. ubahTipeJin
-
 6. jinPembangun
 
 7. jinPengumpul
@@ -18,7 +17,7 @@ yang blm OK:
 
 9. batchBangun
 
-10. ambilLaporanJin
+10. ambilLaporanJin (belom)
 
 11. ambilLaporanCandi
 
