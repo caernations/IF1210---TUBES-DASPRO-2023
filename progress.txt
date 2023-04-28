@@ -13,11 +13,10 @@ semi OK:
 6. jinPembangun
 - masih error ( list index out of range)
 10. ambilLaporanJin (cek lagi)
+12. hancurkanCandi
 
 yang blm OK:
 9. batchBangun
-
-12. hancurkanCandi
 
 13. ayamBerkokok
 

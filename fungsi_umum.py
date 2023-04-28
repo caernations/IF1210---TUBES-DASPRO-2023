@@ -17,9 +17,9 @@ def appendlist(list1, elemen, lenlist1):
 def removelist(list1, indeks, lenlist1):
     list2 = [0 for i in range (lenlist1 - 1)]
     for i in range (lenlist1):
-        if i == indeks:
+        if i == int(indeks):
             continue
-        if i > indeks:
+        if i > int(indeks):
             list2 = appendlist(list2, list1[i], i-1)
         else:
             list2 = appendlist(list2, list1[i], i)
