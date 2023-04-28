@@ -102,7 +102,7 @@ def help(role):
             elif command == "6" or command == "Ambil Laporan Jin":
                 modul_laporan.ambilLaporanJin()
             elif command == "7" or command == "Ambil Laporan Candi":
-                modul_laporan.ambilLaporanCandi
+                modul_laporan.ambilLaporanCandi()
             elif command == "8" or command == "Logout":
                 logout()
                 break

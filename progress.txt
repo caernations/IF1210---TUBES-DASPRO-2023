@@ -4,20 +4,19 @@ OK:
 3. summonJin (OK)
 4. hilangkanJin (OK)
 5. ubahTipeJin (OK)
-# tambahin status jin dan keterangan kl sempet
+- tambahin status jin dan keterangan kl sempet
 7. jinPengumpul
 8. batchKumpul
+11. ambilLaporanCandi
 
 semi OK:
+6. jinPembangun
+- masih error ( list index out of range)
 
 yang blm OK:
-6. jinPembangun
-
 9. batchBangun
 
 10. ambilLaporanJin (belom)
-
-11. ambilLaporanCandi
 
 12. hancurkanCandi
 
