@@ -8,31 +8,26 @@ def jinPembangun():
     system('cls')
     print ("JIN PEMBANGUN\n")
 
-    pasirneeded = random.randint(0, 5)
-    batuneeded = random.randint(0, 5)
-    airneeded = random.randint(0, 5)
+    pasirneeded = random.randint(1, 5)
+    batuneeded = random.randint(1, 5)
+    airneeded = random.randint(1, 5)
     
     if (pasirneeded > fungsi_umum.intpasir) or (batuneeded > fungsi_umum.intpasir) or (airneeded > fungsi_umum.intair):
         print("Bahan bangunan tidak mencukupi")
         print("Candi tidak bisa dibangun!")
     else:
-        if fungsi_umum.banyakcandi <= 100:
+        if fungsi_umum.banyakcandi > 100:
+            print("Candi berhasil dibangun!\nSisa candi yang perlu dibangun: 0")
+        else:
             fungsi_umum.banyakcandi += 1
             print("Candi berhasil dibangun!")
             print(f"Sisa candi yang perlu dibangun: {(100 - fungsi_umum.banyakcandi)}")
-            for i in range(1000):
-                if fungsi_umum.matrikscandi[i][0] == i:
-                    continue
-                else:
-                    fungsi_umum.matrikscandi[i][0] = i
-                    fungsi_umum.matrikscandi[i][1] = fungsi_umum.username
-                    fungsi_umum.matrikscandi[i][2] = pasirneeded
-                    fungsi_umum.matrikscandi[i][3] = batuneeded
-                    fungsi_umum.matrikscandi[i][4] = airneeded
+            for x in range(fungsi_umum.banyakcandi + 1):
+                if fungsi_umum.matrikscandi[x][0] != x:
+                    fungsi_umum.matrikscandi = fungsi_umum.appendlist(fungsi_umum.matrikscandi, [x, fungsi_umum.username, pasirneeded, batuneeded, airneeded], fungsi_umum.banyakcandi)
+                    fungsi_umum.banyakcandi += 1
                     print(fungsi_umum.matrikscandi)
-                break
-        else:
-            print("Candi berhasil dibangun!\nSisa candi yang perlu dibangun: 0")
+                    break
 
         fungsi_umum.intpasir -= pasirneeded
         fungsi_umum.intbatu -= batuneeded
@@ -55,7 +50,7 @@ def jinPengumpul():
     airfound = random.randint(0, 5)
 
     # Menambahkan hasil jin pengumpul ke dalam jumlah awal bahan bangunan
-    fungsi_umum.matriksbahanbangunan[0][2] += pasirfound
+    fungsi_umum.intpasir += pasirfound
     fungsi_umum.intbatu += batufound
     fungsi_umum.intair += airfound
 

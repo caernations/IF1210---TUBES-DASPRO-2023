@@ -12,11 +12,10 @@ OK:
 semi OK:
 6. jinPembangun
 - masih error ( list index out of range)
+10. ambilLaporanJin (cek lagi)
 
 yang blm OK:
 9. batchBangun
-
-10. ambilLaporanJin (belom)
 
 12. hancurkanCandi
 

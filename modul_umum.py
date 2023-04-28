@@ -134,6 +134,8 @@ def help(role):
                 system('cls')
             else:
                 print("Invalid command, please try again.")
+                system('pause')
+                system('cls')
 
     elif role == "Jin_Pengumpul":
         while True:
@@ -151,6 +153,8 @@ def help(role):
                 system('cls')
             else:
                 print("Invalid command, please try again.")
+                system('pause')
+                system('cls')
 
     elif role == "Jin_Pembangun":
         while True:
@@ -168,6 +172,8 @@ def help(role):
                 system('cls')
             else:
                 print("Invalid command, please try again.")
+                system('pause')
+                system('cls')
 
     elif role == None:
         while True:
@@ -185,3 +191,5 @@ def help(role):
                 break
             else:
                 print("Invalid command, please try again.")
+                system('pause')
+                system('cls')
