@@ -65,23 +65,26 @@ def logout():
 
 # F12 - AYAM BERKOKOK
 def ayamBerkokok():
-    print("Kukuruyuk.. Kukuruyuk..")
-    print()
-    jumlahcandi=-1
-    for i in range(fungsi_umum.lenstr(fungsi_umum.matrikscandi)):
-        if(fungsi_umum.matrikscandi!=""):
-            jumlahcandi+=1
-    if(jumlahcandi<=100):
-        print("jumlah candi:",jumlahcandi)
-        print()
-        print("Selamat, Roro Jonggrang memenangkan permainan!")
-        print()
-        print("*Bandung Bondowoso angry noise*")
-        print("Roro Jonggrang dikutuk menjadi candi.")
+    system('pause')
+    system('cls')
+    print("AYAM BERKOKOK\n")
+
+    print("Kukuruyuk..! Kukuruyuk..!")
+    print("Kukuruyuk..! Kukuruyuk..!")
+    print("Kukuruyuk..! Kukuruyuk..!\n")
+    print(f"Jumlah Candi: {fungsi_umum.banyakcandi}\n")
+    system('pause')
+    system('cls')
+    
+    if(fungsi_umum.banyakcandi < 100):
+        print("""*Bandung Bondowoso angry noise*
+Roro Jonggrang dikutuk menjadi candi.\n""")
     else:
-        print("jumlah candi:",jumlahcandi)
-        print()
-        print("Yah, Bandung Bondowoso memenangkan permainan!")
+        print("Yah, Bandung Bondowoso memenangkan permainan!\n")
+        exit()
+    system('pause')
+    system('cls')
+    exit()
 
 # F15 - help
 def help(role):
@@ -108,7 +111,7 @@ def help(role):
                 break
             elif command == "Login":
                 system('cls')
-                print("Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
                 system('pause')
                 system('cls')
             else:
@@ -129,7 +132,17 @@ def help(role):
                 break
             elif command == "Login":
                 system('cls')
-                print("Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                system('pause')
+                system('cls')
+            elif command == "Ambil Laporan Jin":
+                system('cls')
+                print("Laporan Jin hanya dapat diakses oleh akun Bandung Bondowoso")
+                system('pause')
+                system('cls')
+            elif command == "Ambil Laporan Candi":
+                system('cls')
+                print("Laporan Candi hanya dapat diakses oleh akun Bandung Bondowoso")
                 system('pause')
                 system('cls')
             else:
@@ -148,7 +161,17 @@ def help(role):
                 break
             elif command == "Login":
                 system('cls')
-                print("Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                system('pause')
+                system('cls')
+            elif command == "Ambil Laporan Jin":
+                system('cls')
+                print("Laporan Jin hanya dapat diakses oleh akun Bandung Bondowoso")
+                system('pause')
+                system('cls')
+            elif command == "Ambil Laporan Candi":
+                system('cls')
+                print("Laporan Candi hanya dapat diakses oleh akun Bandung Bondowoso")
                 system('pause')
                 system('cls')
             else:
@@ -167,7 +190,17 @@ def help(role):
                 break
             elif command == "Login":
                 system('cls')
-                print("Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
+                system('pause')
+                system('cls')
+            elif command == "Ambil Laporan Jin":
+                system('cls')
+                print("Laporan Jin hanya dapat diakses oleh akun Bandung Bondowoso")
+                system('pause')
+                system('cls')
+            elif command == "Ambil Laporan Candi":
+                system('cls')
+                print("Laporan Candi hanya dapat diakses oleh akun Bandung Bondowoso")
                 system('pause')
                 system('cls')
             else:

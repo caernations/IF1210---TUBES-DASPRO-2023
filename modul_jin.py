@@ -2,28 +2,39 @@ import fungsi_umum
 from os import system
 
 # F03 - SUMMON JIN
+# F04 - HILANGKAN JIN
+# F05 - UBAH TIPE JIN
+
+
+
+# F03 - SUMMON JIN
 def summonJin():
     system('pause')
     system('cls')
     print ("SUMMON JIN\n")
-    print("""Jenis Jin yang dapat dipanggil:
+
+    print("""Jenis Jin yang dapat disummon:
 1. Jin Pengumpul - Bertugas mengumpulkan bahan bangunan
 2. Jin Pembangun - Bertugas membangun candi\n""")
-    nomor_jenis = str(input("Masukkan nomor jenis jin yang ingin dipanggil:\n> "))
+    nomorjenis = str(input("Masukkan nomor jenis jin yang ingin disummon:\n> "))
+
     # Cek apakah nomor jenis valid atau tidak
-    while not(nomor_jenis == "1" or nomor_jenis == "2"):
+    while not(nomorjenis == "1" or nomorjenis == "2"):
         system('cls')
-        print(f"Tidak ada jin bernomor {nomor_jenis}!\n")
+        print(f"Tidak ada jin bernomor {nomorjenis}!\n")
         system('pause')
         system('cls')
-        print("""Jenis Jin yang dapat dipanggil:
+
+        print("""Jenis Jin yang dapat disummon:
 1. Jin Pengumpul - Bertugas mengumpulkan bahan bangunan
 2. Jin Pembangun - Bertugas membangun candi\n""")
-        nomor_jenis = input("Masukkan nomor jenis jin yang ingin dipanggil:\n> ")
-    if nomor_jenis == "1":
+        nomorjenis = input("Masukkan nomor jenis jin yang ingin disummon:\n> ")
+
+    if nomorjenis == "1":
         system('cls')
         print("Memilih jin 'Pengumpul'\n")
         cek = True
+
         while cek == True:
             cek = False
             usernamejin = input("Masukkan username jin:\n> ")
@@ -73,7 +84,8 @@ def summonJin():
     print("Membacakan mantra...\n")
     system('pause')
     system('cls')
-    print(f"Jin {usernamejin} berhasil dipanggil!\n")
+    print(f"Jin '{usernamejin}' berhasil disummon!\n")
+
     system('pause')
     system('cls')
 
@@ -83,24 +95,29 @@ def hilangkanJin() :
     system('pause')
     system('cls')
     print ("HILANGKAN JIN\n")
-    usernamejin = input("Masukkan username jin: ")
-    for i in range (fungsi_umum.banyakuser) :
+
+    found = False
+    usernamejin = input("Masukkan username jin:\n>> ")
+    system('cls')
+    for i in range (3, fungsi_umum.banyakuser) :
         if fungsi_umum.matriksuser[i][2] == "Jin_Pengumpul" or fungsi_umum.matriksuser[i][2] == "Jin_Pembangun":
             if fungsi_umum.matriksuser[i][0] == usernamejin:
+                found = True
+                konfirmasihapusjin = input(f"Apakah anda yakin ingin menghapus jin dengan username '{usernamejin}' (Y / N)?\n> ").title()
                 system('cls')
-                konfirmasihapusjin = input(f"Apakah anda yakin ingin menghapus jin dengan username {usernamejin} (Y / N)?\n> ").title()
                 if konfirmasihapusjin == "Y":
                     fungsi_umum.matriksuser = fungsi_umum.removelist(fungsi_umum.matriksuser, i, fungsi_umum.banyakuser)
                     fungsi_umum.banyakuser -= 1
-                    system('cls')
-                    print("Jin telah berhasil dihapus dari alam gaib.")
+                    print("Jin telah hilang dari alam gaib.")
                     break
                 elif konfirmasihapusjin == "N":
                     print("Jin masih belum terhapus")
                 else:
                     print("Invalid command. Please try again.")
-            print("Tidak ada jin dengan username tersebut.")
-            break
+
+    if not found:
+        print(f"Tidak ada jin dengan username '{usernamejin}'.")
+
     system('pause')
     system('cls')
 
@@ -110,7 +127,8 @@ def ubahTipeJin():
     system('pause')
     system('cls')
     print("UBAH TIPE JIN\n")
-    usernamejin = input("Masukkan username jin: ")
+
+    usernamejin = input("Masukkan username jin:\n>> ")
     found = False
     idx = -1 # inisialisasi idx dengan nilai default apabila username tidak ditemukan
 
@@ -119,6 +137,7 @@ def ubahTipeJin():
             found = True
             idx = i
             break 
+
     if not found:
         print("Tidak ada jin dengan username tersebut.")
         system('pause')
@@ -131,7 +150,10 @@ def ubahTipeJin():
     else:
         role_awal = "Pembangun"
         role_akhir = "Pengumpul"
+
     konfirmasiubahtipejin = input((f"\nJin ini bertipe '{role_awal}'.\nIngin mengubah ke tipe '{role_akhir}' (Y / N)?\n> ")).title()
+    system('cls')
+
     if konfirmasiubahtipejin == "Y":
         if role_akhir == "Pembangun":
             fungsi_umum.matriksuser[idx][2] = "Jin_Pembangun"
@@ -139,7 +161,10 @@ def ubahTipeJin():
             fungsi_umum.matriksuser[idx][2] = "Jin_Pengumpul"
         system('cls')
         print("Jin telah berhasil diubah.")
-        system('pause')
-        system('cls')
-    else:
+    elif konfirmasiubahtipejin == "N":
         print("Jin gagal diubah")
+    else:
+        print("Invalid command. Please try again.")
+
+    system('pause')
+    system('cls')

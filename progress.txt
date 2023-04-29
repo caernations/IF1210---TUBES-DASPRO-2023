@@ -1,29 +1,35 @@
 OK:
-1. login (OK)
-2. logout (OK)
-3. summonJin (OK)
-4. hilangkanJin (OK)
-5. ubahTipeJin (OK)
+1. login
+2. logout
+3. summonJin
+4. hilangkanJin
+5. ubahTipeJin
 - tambahin status jin dan keterangan kl sempet
 7. jinPengumpul
 8. batchKumpul
+10. ambilLaporanJin
 11. ambilLaporanCandi
+12. hancurkanCandi
+13. ayamBerkokok
+16. help
+
 
 semi OK:
 6. jinPembangun
-- masih error ( list index out of range)
-10. ambilLaporanJin (cek lagi)
-12. hancurkanCandi
+- kalo candinya kosong, pertama run matriks kosong, kedua run error
+- kalo candinya ga kosong, data candi yang udah ada pindah ke belakang, jadi ada indeks double
+9. batchBangun
+- sama kayak jinPembangun
+- Mengerahkan 2 jin untuk membangun candi dengan total bahan 7 pasir, 3 batu, dan 3 air.
+Bangun gagal. Kurang 2 pasir, -2 batu, dan -2 air (perbaikin)
+17. exit
+- save dulu banh
+
 
 yang blm OK:
-9. batchBangun
-
-13. ayamBerkokok
-
 14. load
-
 15. save
 
-16. help
 
-17. exit
+CATETAN:
+a. check nomer fungsi udah bener apa belom

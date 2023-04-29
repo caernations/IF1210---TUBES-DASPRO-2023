@@ -19,8 +19,11 @@ def ambilLaporanJin():
             totaljinpengumpul += 1
         elif fungsi_umum.matriksuser[i][2] == "Jin_Pembangun":
             totaljinpembangun += 1
+
+    for i in range(fungsi_umum.banyakuser):
+        if fungsi_umum.matriksuser[i][2] == "Jin_Pembangun":
+            candiowned = 0
             for j in range(fungsi_umum.banyakcandi):
-                candiowned = 0
                 if fungsi_umum.matrikscandi[j][1] == fungsi_umum.matriksuser[i][0]:
                     candiowned += 1
             if candiowned > candiownedterbanyak:

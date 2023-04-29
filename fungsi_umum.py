@@ -25,6 +25,18 @@ def removelist(list1, indeks, lenlist1):
             list2 = appendlist(list2, list1[i], i)
     return list2
 
+def insertlist(list1, indeks, elemen, lenlist1):
+    list2 = [0 for i in range(lenlist1 + 1)]
+    for i in range(lenlist1 + 1):
+        if i < indeks:
+            list2[i] = list1[i]
+        elif i == indeks:
+            list2[indeks] = elemen 
+        else:
+            list2[i] = list1[i - 1] 
+    return list2
+
+
 
 def lenarr(arr):
     # Fungsi untuk menghitung panjang array

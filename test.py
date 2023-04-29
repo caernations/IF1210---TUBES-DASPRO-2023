@@ -1,3 +1,0 @@
-import fungsi_umum
-
-print(fungsi_umum.matriksbahanbangunan)
