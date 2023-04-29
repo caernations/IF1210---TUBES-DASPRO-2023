@@ -7,12 +7,13 @@ from os import system
 from datetime import datetime as dt
 import fungsi_umum
 
+# F01 - LOGIN
 # F02 - LOGOUT
 # F12 - AYAM BERKOKOK
-# F13 - LOAD
-# F14 - SAVE
-# F16 - EXIT
-# F02 - LOGOUT
+# F14 - LOAD
+# F15 - SAVE
+# F16 - HELP
+# F17 - EXIT
 
 # F01 - LOGIN
 def login():
@@ -63,6 +64,7 @@ def logout():
         system('pause')
         system('cls')
 
+
 # F12 - AYAM BERKOKOK
 def ayamBerkokok():
     system('pause')
@@ -86,11 +88,30 @@ Roro Jonggrang dikutuk menjadi candi.\n""")
     system('cls')
     exit()
 
-# F15 - help
+
+# F14 - SAVE
+def save(data, filename, foldername):
+    global folder_path
+    folder_path = f"./save/{foldername}"
+    if not os.path.exists(folder_path):
+        os.mkdir(folder_path)
+        print(f"Membuat folder save/{foldername} ...")
+    file_path = f"{folder_path}/{filename}"
+    if os.path.exists(file_path):
+        os.remove(file_path)
+    with open(file_path, 'w') as f:
+        f.write(data)
+
+
+# F15 - LOAD
+
+
+
+# F16 - HELP
 def help(role):
     if role == "Bandung_Bondowoso":
         while True:
-            print("1. Summon Jin\n2. Hilangkan Jin\n3. Ubah Tipe Jin\n4. Batch Kumpul\n5. Batch Bangun\n6. Ambil Laporan Jin\n7. Ambil Laporan Candi\n8. Logout")
+            print("1. Summon Jin\n2. Hilangkan Jin\n3. Ubah Tipe Jin\n4. Batch Kumpul\n5. Batch Bangun\n6. Ambil Laporan Jin\n7. Ambil Laporan Candi\n8. Save\n9. Logout")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Summon Jin":
                 modul_jin.summonJin()
@@ -106,7 +127,19 @@ def help(role):
                 modul_laporan.ambilLaporanJin()
             elif command == "7" or command == "Ambil Laporan Candi":
                 modul_laporan.ambilLaporanCandi()
-            elif command == "8" or command == "Logout":
+            elif command == "8" or command == "Save":
+                system('pause')
+                system('cls')
+                foldername = input("Masukkan nama folder:\n>>  ")
+                print("\nSaving ...\n")
+                system('pause')
+                system('cls')
+                for i in range(3):
+                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
+                system('pause')
+                system('cls')
+            elif command == "9" or command == "Logout":
                 logout()
                 break
             elif command == "Login":
@@ -121,13 +154,25 @@ def help(role):
 
     elif role == "Roro_Jonggrang":
         while True:
-            print("1. Hancurkan Candi\n2. Ayam Berkokok\n3. Logout")
+            print("1. Hancurkan Candi\n2. Ayam Berkokok\n3. Save\n4. Logout")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Hancurkan Candi":
                 modul_candi.hancurkanCandi()
             elif command == "2" or command == "Ayam Berkokok":
                 ayamBerkokok()
-            elif command == "3" or command == "Logout":
+            elif command == "3" or command == "Save":
+                system('pause')
+                system('cls')
+                foldername = input("Masukkan nama folder:\n>>  ")
+                print("\nSaving ...\n")
+                system('pause')
+                system('cls')
+                for i in range(3):
+                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
+                system('pause')
+                system('cls')
+            elif command == "4" or command == "Logout":
                 logout()
                 break
             elif command == "Login":
@@ -152,11 +197,23 @@ def help(role):
 
     elif role == "Jin_Pengumpul":
         while True:
-            print("1. Jin Pengumpul\n2. Logout")
+            print("1. Jin Pengumpul\n2. Save\n3. Logout")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Jin Pengumpul":
                 modul_candi.jinPengumpul()
-            elif command == "2" or command == "Logout":
+            elif command == "2" or command == "Save":
+                system('pause')
+                system('cls')
+                foldername = input("Masukkan nama folder:\n>>  ")
+                print("\nSaving ...\n")
+                system('pause')
+                system('cls')
+                for i in range(3):
+                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
+                system('pause')
+                system('cls')
+            elif command == "3" or command == "Logout":
                 logout()
                 break
             elif command == "Login":
@@ -181,11 +238,23 @@ def help(role):
 
     elif role == "Jin_Pembangun":
         while True:
-            print("1. Jin Pembangun\n2. Logout")
+            print("1. Jin Pembangun\n2. Save\n3. Logout")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Jin Pembangun":
                 modul_candi.jinPembangun()
-            elif command == "2" or command == "Logout":
+            elif command == "2" or command == "Save":
+                system('pause')
+                system('cls')
+                foldername = input("Masukkan nama folder:\n>>  ")
+                print("\nSaving ...\n")
+                system('pause')
+                system('cls')
+                for i in range(3):
+                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
+                system('pause')
+                system('cls')
+            elif command == "3" or command == "Logout":
                 logout()
                 break
             elif command == "Login":
@@ -215,10 +284,19 @@ def help(role):
             if command == "1" or command == "Login":
                 login()
             elif command == "2 " or command == "Exit":
-                print("anjay2")
-                exit()
+                exitprogram()
             elif command == "3" or command == "Save":
-                print("anjay3")
+                system('pause')
+                system('cls')
+                foldername = input("Masukkan nama folder:\n>>  ")
+                print("\nSaving ...\n")
+                system('pause')
+                system('cls')
+                for i in range(3):
+                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
+                system('pause')
+                system('cls')
             elif command == "4" or command == "Logout":
                 logout()
                 break
@@ -226,3 +304,33 @@ def help(role):
                 print("Invalid command, please try again.")
                 system('pause')
                 system('cls')
+
+
+# F17 - EXIT
+def exitprogram():
+    system('pause')
+    system('cls')
+    print("EXIT\n")
+
+    while True:
+        wanttosave = str(input("Apakah Anda ingin melakukan penyimpanan file yang sudah diubah? (Y / N )\n>> ")).title()
+        if wanttosave == "Y":
+            system('pause')
+            system('cls')
+            foldername = input("Masukkan nama folder:\n>>  ")
+            print("\nSaving ...\n")
+            system('pause')
+            system('cls')
+            for i in range(3):
+                save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+            print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
+            system('pause')
+            system('cls')
+            exit()
+        elif wanttosave == "N":
+            system('pause')
+            system('cls')
+            exit()
+        else:
+            system('cls')
+            continue

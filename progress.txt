@@ -11,7 +11,9 @@ OK:
 11. ambilLaporanCandi
 12. hancurkanCandi
 13. ayamBerkokok
+15. save
 16. help
+17. exit
 
 
 semi OK:
@@ -22,14 +24,7 @@ semi OK:
 - sama kayak jinPembangun
 - Mengerahkan 2 jin untuk membangun candi dengan total bahan 7 pasir, 3 batu, dan 3 air.
 Bangun gagal. Kurang 2 pasir, -2 batu, dan -2 air (perbaikin)
-17. exit
-- save dulu banh
 
 
 yang blm OK:
 14. load
-15. save
-
-
-CATETAN:
-a. check nomer fungsi udah bener apa belom

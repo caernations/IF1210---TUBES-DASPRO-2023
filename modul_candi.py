@@ -3,6 +3,12 @@ from os import system
 import random
 
 # F06 - JIN PEMBANGUN
+# F07 - JIN PENGUMPUL
+# F08 - BATCH KUMPUL
+# F09 - BATCH BANGUN
+# F11 - HANCURKAN CANDI
+
+# F06 - JIN PEMBANGUN
 def jinPembangun():
     system('pause')
     system('cls')
@@ -106,7 +112,6 @@ def batchKumpul():
 
     system('pause')
     system('cls')
-
 
 
 # F09 - BATCH BANGUN

@@ -1,7 +1,11 @@
 import fungsi_umum
 from os import system
 
-# F09 - AMBIL LAPORAN JIN
+# F10 - AMBIL LAPORAN JIN
+# F11 - AMBIL LAPORAN CANDI
+
+
+# F10 - AMBIL LAPORAN JIN
 def ambilLaporanJin():
     system('pause')
     system('cls')
@@ -33,7 +37,6 @@ def ambilLaporanJin():
                 jintermalas = fungsi_umum.matriksuser[i][0]
                 candiownedtersedikit = candiowned
             
-
     print(f"""Total Jin\t\t: {(fungsi_umum.banyakuser - 2)}
 Total Jin Pengumpul\t: {totaljinpengumpul}
 Total Jin Pembangun\t: {totaljinpembangun}
@@ -46,7 +49,8 @@ Jumlah Air\t\t: {fungsi_umum.intair}
     system('pause')
     system('cls')
 
-# F10 - AMBIL LAPORAN CANDI
+
+# F11 - AMBIL LAPORAN CANDI
 def ambilLaporanCandi():
     system('pause')
     system('cls')

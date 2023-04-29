@@ -76,11 +76,18 @@ def importcsv(filename, delimeter = ';'):
     return dataframe, row
 
 
-def writedu(filename, username, password, role):
-    # Fungsi untuk menulis di datauser
-    file = open(filename,'a')
-    file.write("\n" + username + ";" + password + ";" + role)
-    file.close()
+def joinstr(matriks, lenmatriks, separator=';', header = ''):
+    strmatriks = header + '\n' if header else ''
+    jumlahrow = rowmatriksuser
+
+    for i in range(lenmatriks):
+        for j in range(jumlahrow):
+            if j > 0:
+                strmatriks += separator
+            strmatriks += str(matriks[i][j])
+        if i < lenmatriks - 1:
+            strmatriks += '\n'
+    return strmatriks
 
 
 def tuliscsv(filename, data):
@@ -112,3 +119,18 @@ matriksbahanbangunan, banyakbahanbangunan = importcsv('bahan_bangunan.csv', deli
 intpasir = int(matriksbahanbangunan[0][2])
 intbatu = int(matriksbahanbangunan[1][2])
 intair = int(matriksbahanbangunan[2][2])
+
+headermatriksuser = 'username;password;role'
+headermatrikscandi = 'id;pembuat;pasir;batu;air'
+headermatriksbahanbangunan = 'nama;deskripsi;jumlah'
+
+rowmatriksuser = 3
+rowmatrikscandi = 5
+rowmatriksbahanbangunan = 3
+
+fileuser = joinstr(matriksuser, banyakuser, header = headermatriksuser)
+filecandi = joinstr(matrikscandi, banyakcandi, header = headermatrikscandi)
+filebahanbangunan = joinstr(matriksbahanbangunan, banyakbahanbangunan, header = headermatriksbahanbangunan)
+
+listfile = [fileuser, filecandi, filebahanbangunan]
+listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
