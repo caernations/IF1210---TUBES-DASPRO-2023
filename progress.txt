@@ -5,6 +5,7 @@ OK:
 4. hilangkanJin
 5. ubahTipeJin
 - tambahin status jin dan keterangan kl sempet
+6. jinPembangun
 7. jinPengumpul
 8. batchKumpul
 10. ambilLaporanJin
@@ -15,16 +16,13 @@ OK:
 16. help
 17. exit
 
-
 semi OK:
-6. jinPembangun
-- kalo candinya kosong, pertama run matriks kosong, kedua run error
-- kalo candinya ga kosong, data candi yang udah ada pindah ke belakang, jadi ada indeks double
 9. batchBangun
-- sama kayak jinPembangun
 - Mengerahkan 2 jin untuk membangun candi dengan total bahan 7 pasir, 3 batu, dan 3 air.
 Bangun gagal. Kurang 2 pasir, -2 batu, dan -2 air (perbaikin)
 
-
 yang blm OK:
 14. load
+
+
+! tambahin exit di help

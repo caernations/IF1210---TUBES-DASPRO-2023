@@ -76,38 +76,17 @@ def importcsv(filename, delimeter = ';'):
     return dataframe, row
 
 
-def joinstr(matriks, lenmatriks, separator=';', header = ''):
+def joinstr(matriks, lenmatriks, rowmatriks, separator=';', header = ''):
     strmatriks = header + '\n' if header else ''
-    jumlahrow = rowmatriksuser
 
     for i in range(lenmatriks):
-        for j in range(jumlahrow):
+        for j in range(rowmatriks):
             if j > 0:
                 strmatriks += separator
             strmatriks += str(matriks[i][j])
         if i < lenmatriks - 1:
             strmatriks += '\n'
     return strmatriks
-
-
-def tuliscsv(filename, data):
-    if filename == "user.csv":
-        idx2 = 3
-    elif filename== "candi.csv":
-        idx2 = 5
-    file=open(filename,'w')
-    for i in range(lenstr(data)):
-        for j in range(idx2):
-            if(data[i]==""):
-                continue
-            else:
-                file.write(data[i][j])
-                if(j != idx2 -1):
-                    file.write(";")
-                else:
-                    file.write("\n")
-    file.close()
-
 
 
 # VARIABLE
@@ -127,10 +106,3 @@ headermatriksbahanbangunan = 'nama;deskripsi;jumlah'
 rowmatriksuser = 3
 rowmatrikscandi = 5
 rowmatriksbahanbangunan = 3
-
-fileuser = joinstr(matriksuser, banyakuser, header = headermatriksuser)
-filecandi = joinstr(matrikscandi, banyakcandi, header = headermatrikscandi)
-filebahanbangunan = joinstr(matriksbahanbangunan, banyakbahanbangunan, header = headermatriksbahanbangunan)
-
-listfile = [fileuser, filecandi, filebahanbangunan]
-listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]

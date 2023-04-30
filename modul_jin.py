@@ -76,6 +76,7 @@ def summonJin():
             password = input("Masukkan password jin:\n> ")
         fungsi_umum.matriksuser = fungsi_umum.appendlist(fungsi_umum.matriksuser, [usernamejin, password, "Jin_Pembangun"], fungsi_umum.banyakuser)
         fungsi_umum.banyakuser += 1
+        print(fungsi_umum.matriksuser)
 
     system('pause')
     system('cls')

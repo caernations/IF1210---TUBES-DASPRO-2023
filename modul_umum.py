@@ -6,6 +6,7 @@ import os
 from os import system
 from datetime import datetime as dt
 import fungsi_umum
+import fungsi_umum
 
 # F01 - LOGIN
 # F02 - LOGOUT
@@ -91,7 +92,6 @@ Roro Jonggrang dikutuk menjadi candi.\n""")
 
 # F14 - SAVE
 def save(data, filename, foldername):
-    global folder_path
     folder_path = f"./save/{foldername}"
     if not os.path.exists(folder_path):
         os.mkdir(folder_path)
@@ -104,7 +104,6 @@ def save(data, filename, foldername):
 
 
 # F15 - LOAD
-
 
 
 # F16 - HELP
@@ -128,6 +127,11 @@ def help(role):
             elif command == "7" or command == "Ambil Laporan Candi":
                 modul_laporan.ambilLaporanCandi()
             elif command == "8" or command == "Save":
+                fileuser = fungsi_umum.joinstr(fungsi_umum.matriksuser, fungsi_umum.banyakuser, rowmatriks = 3, header = fungsi_umum.headermatriksuser)
+                filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
+                filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
+                listfile = [fileuser, filecandi, filebahanbangunan]
+                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -135,7 +139,8 @@ def help(role):
                 system('pause')
                 system('cls')
                 for i in range(3):
-                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                    print(listfile[i])
+                    save(listfile[i], listfilename[i], foldername)
                 print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
                 system('pause')
                 system('cls')
@@ -161,6 +166,11 @@ def help(role):
             elif command == "2" or command == "Ayam Berkokok":
                 ayamBerkokok()
             elif command == "3" or command == "Save":
+                fileuser = fungsi_umum.joinstr(fungsi_umum.matriksuser, fungsi_umum.banyakuser, rowmatriks = 3, header = fungsi_umum.headermatriksuser)
+                filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
+                filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
+                listfile = [fileuser, filecandi, filebahanbangunan]
+                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -168,7 +178,7 @@ def help(role):
                 system('pause')
                 system('cls')
                 for i in range(3):
-                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                    save(listfile[i], listfilename[i], foldername)
                 print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
                 system('pause')
                 system('cls')
@@ -202,6 +212,11 @@ def help(role):
             if command == "1" or command == "Jin Pengumpul":
                 modul_candi.jinPengumpul()
             elif command == "2" or command == "Save":
+                fileuser = fungsi_umum.joinstr(fungsi_umum.matriksuser, fungsi_umum.banyakuser, rowmatriks = 3, header = fungsi_umum.headermatriksuser)
+                filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
+                filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
+                listfile = [fileuser, filecandi, filebahanbangunan]
+                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -209,7 +224,7 @@ def help(role):
                 system('pause')
                 system('cls')
                 for i in range(3):
-                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                    save(listfile[i], listfilename[i], foldername)
                 print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
                 system('pause')
                 system('cls')
@@ -243,6 +258,11 @@ def help(role):
             if command == "1" or command == "Jin Pembangun":
                 modul_candi.jinPembangun()
             elif command == "2" or command == "Save":
+                fileuser = fungsi_umum.joinstr(fungsi_umum.matriksuser, fungsi_umum.banyakuser, rowmatriks = 3, header = fungsi_umum.headermatriksuser)
+                filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
+                filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
+                listfile = [fileuser, filecandi, filebahanbangunan]
+                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -250,7 +270,7 @@ def help(role):
                 system('pause')
                 system('cls')
                 for i in range(3):
-                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                    save(listfile[i], listfilename[i], foldername)
                 print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
                 system('pause')
                 system('cls')
@@ -286,6 +306,11 @@ def help(role):
             elif command == "2 " or command == "Exit":
                 exitprogram()
             elif command == "3" or command == "Save":
+                fileuser = fungsi_umum.joinstr(fungsi_umum.matriksuser, fungsi_umum.banyakuser, rowmatriks = 3, header = fungsi_umum.headermatriksuser)
+                filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
+                filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
+                listfile = [fileuser, filecandi, filebahanbangunan]
+                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -293,7 +318,7 @@ def help(role):
                 system('pause')
                 system('cls')
                 for i in range(3):
-                    save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                    save(listfile[i], listfilename[i], foldername)
                 print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
                 system('pause')
                 system('cls')
@@ -315,6 +340,11 @@ def exitprogram():
     while True:
         wanttosave = str(input("Apakah Anda ingin melakukan penyimpanan file yang sudah diubah? (Y / N )\n>> ")).title()
         if wanttosave == "Y":
+            fileuser = fungsi_umum.joinstr(fungsi_umum.matriksuser, fungsi_umum.banyakuser, rowmatriks = 3, header = fungsi_umum.headermatriksuser)
+            filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
+            filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
+            listfile = [fileuser, filecandi, filebahanbangunan]
+            listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
             system('pause')
             system('cls')
             foldername = input("Masukkan nama folder:\n>>  ")
@@ -322,7 +352,7 @@ def exitprogram():
             system('pause')
             system('cls')
             for i in range(3):
-                save(fungsi_umum.listfile[i], fungsi_umum.listfilename[i], foldername)
+                save(listfile[i], listfilename[i], foldername)
             print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
             system('pause')
             system('cls')
