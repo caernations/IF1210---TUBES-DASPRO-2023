@@ -13,78 +13,82 @@ def summonJin():
     system('cls')
     print ("SUMMON JIN\n")
 
-    print("""Jenis Jin yang dapat disummon:
-1. Jin Pengumpul - Bertugas mengumpulkan bahan bangunan
-2. Jin Pembangun - Bertugas membangun candi\n""")
-    nomorjenis = str(input("Masukkan nomor jenis jin yang ingin disummon:\n> "))
-
-    # Cek apakah nomor jenis valid atau tidak
-    while not(nomorjenis == "1" or nomorjenis == "2"):
-        system('cls')
-        print(f"Tidak ada jin bernomor {nomorjenis}!\n")
-        system('pause')
-        system('cls')
-
+    if (fungsi_umum.banyakuser - 2) >= 100:
+        print("""Jumlah Jin telah maksimal! (100 Jin).
+Bandung tidak dapat mensummon lebih dari itu.""")
+    else:
         print("""Jenis Jin yang dapat disummon:
 1. Jin Pengumpul - Bertugas mengumpulkan bahan bangunan
 2. Jin Pembangun - Bertugas membangun candi\n""")
-        nomorjenis = input("Masukkan nomor jenis jin yang ingin disummon:\n> ")
+        nomorjenis = str(input("Masukkan nomor jenis jin yang ingin disummon:\n> "))
 
-    if nomorjenis == "1":
-        system('cls')
-        print("Memilih jin 'Pengumpul'\n")
-        cek = True
-
-        while cek == True:
-            cek = False
-            usernamejin = input("Masukkan username jin:\n> ")
-            for i in range (fungsi_umum.banyakuser) :
-                if fungsi_umum.matriksuser[i][0] == usernamejin :
-                    cek = True
-            if cek == True:
-                print(f"\nUsername '{usernamejin}' sudah diambil.")
-                system('pause')
-                system('cls')
-
-        password = input("Masukkan password jin:\n> ")
-        while(fungsi_umum.lenstr(password) < 5 or fungsi_umum.lenstr(password) > 25):
+        # Cek apakah nomor jenis valid atau tidak
+        while not(nomorjenis == "1" or nomorjenis == "2"):
             system('cls')
-            print("Password panjangnya harus 5-25 karakter!\n")
-            password = input("Masukkan password jin:\n> ")
-        fungsi_umum.matriksuser = fungsi_umum.appendlist(fungsi_umum.matriksuser, [usernamejin, password, "Jin_Pengumpul"], fungsi_umum.banyakuser)
-        fungsi_umum.banyakuser += 1
-
-    else:
-        system('cls')
-        print("Memilih jin 'Pembangun'\n")
-        cek = True
-        while(cek == True):
-            cek = False
-            usernamejin = input("Masukkan username jin:\n> ")
-            for i in range (fungsi_umum.banyakuser) :
-                if fungsi_umum.matriksuser[i][0] == usernamejin :
-                    cek = True
-            if cek == True:
-                print(f"\nUsername '{usernamejin}' sudah diambil.")
-                system('pause')
-                system('cls')
-
-        password = input("Masukkan password jin:\n> ")
-        while(fungsi_umum.lenstr(password) < 5 or fungsi_umum.lenstr(password) > 25):
+            print(f"Tidak ada jin bernomor {nomorjenis}!\n")
+            system('pause')
             system('cls')
-            print("Password panjangnya harus 5-25 karakter!\n")
-            password = input("Masukkan password jin:\n> ")
-        fungsi_umum.matriksuser = fungsi_umum.appendlist(fungsi_umum.matriksuser, [usernamejin, password, "Jin_Pembangun"], fungsi_umum.banyakuser)
-        fungsi_umum.banyakuser += 1
 
-    system('pause')
-    system('cls')
-    print("Mengumpulkan sesajen...")
-    print("Menyerahkan sesajen...")
-    print("Membacakan mantra...\n")
-    system('pause')
-    system('cls')
-    print(f"Jin '{usernamejin}' berhasil disummon!\n")
+            print("""Jenis Jin yang dapat disummon:
+    1. Jin Pengumpul - Bertugas mengumpulkan bahan bangunan
+    2. Jin Pembangun - Bertugas membangun candi\n""")
+            nomorjenis = input("Masukkan nomor jenis jin yang ingin disummon:\n> ")
+
+        if nomorjenis == "1":
+            system('cls')
+            print("Memilih jin 'Pengumpul'\n")
+            cek = True
+
+            while cek == True:
+                cek = False
+                usernamejin = input("Masukkan username jin:\n> ")
+                for i in range (fungsi_umum.banyakuser) :
+                    if fungsi_umum.matriksuser[i][0] == usernamejin :
+                        cek = True
+                if cek == True:
+                    print(f"\nUsername '{usernamejin}' sudah diambil.")
+                    system('pause')
+                    system('cls')
+
+            password = input("Masukkan password jin:\n> ")
+            while(fungsi_umum.lenstr(password) < 5 or fungsi_umum.lenstr(password) > 25):
+                system('cls')
+                print("Password panjangnya harus 5-25 karakter!\n")
+                password = input("Masukkan password jin:\n> ")
+            fungsi_umum.matriksuser = fungsi_umum.appendlist(fungsi_umum.matriksuser, [usernamejin, password, "Jin_Pengumpul"], fungsi_umum.banyakuser)
+            fungsi_umum.banyakuser += 1
+
+        else:
+            system('cls')
+            print("Memilih jin 'Pembangun'\n")
+            cek = True
+            while(cek == True):
+                cek = False
+                usernamejin = input("Masukkan username jin:\n> ")
+                for i in range (fungsi_umum.banyakuser) :
+                    if fungsi_umum.matriksuser[i][0] == usernamejin :
+                        cek = True
+                if cek == True:
+                    print(f"\nUsername '{usernamejin}' sudah diambil.")
+                    system('pause')
+                    system('cls')
+
+            password = input("Masukkan password jin:\n> ")
+            while(fungsi_umum.lenstr(password) < 5 or fungsi_umum.lenstr(password) > 25):
+                system('cls')
+                print("Password panjangnya harus 5-25 karakter!\n")
+                password = input("Masukkan password jin:\n> ")
+            fungsi_umum.matriksuser = fungsi_umum.appendlist(fungsi_umum.matriksuser, [usernamejin, password, "Jin_Pembangun"], fungsi_umum.banyakuser)
+            fungsi_umum.banyakuser += 1
+
+        system('pause')
+        system('cls')
+        print("Mengumpulkan sesajen...")
+        print("Menyerahkan sesajen...")
+        print("Membacakan mantra...\n")
+        system('pause')
+        system('cls')
+        print(f"Jin '{usernamejin}' berhasil disummon!\n")
 
     system('pause')
     system('cls')

@@ -94,9 +94,9 @@ matriksuser, banyakuser = importcsv('default', 'user.csv', delimeter=";")
 matrikscandi, banyakcandi = importcsv('default', 'candi.csv', delimeter=";")
 matriksbahanbangunan, banyakbahanbangunan = importcsv('default','bahan_bangunan.csv', delimeter=";")
 
-intpasir = int(matriksbahanbangunan[0][2])
-intbatu = int(matriksbahanbangunan[1][2])
-intair = int(matriksbahanbangunan[2][2])
+matriksbahanbangunan[0][2] = int(matriksbahanbangunan[0][2])
+matriksbahanbangunan[1][2] = int(matriksbahanbangunan[1][2])
+matriksbahanbangunan[2][2] = int(matriksbahanbangunan[2][2])
 
 headermatriksuser = 'username;password;role'
 headermatrikscandi = 'id;pembuat;pasir;batu;air'

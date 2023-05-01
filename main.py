@@ -1,4 +1,3 @@
-from os import system
 import modul_umum
 import fungsi_umum
 import os
@@ -17,6 +16,9 @@ else:
         fungsi_umum.matriksuser, fungsi_umum.banyakuser = fungsi_umum.importcsv(path, 'user.csv')
         fungsi_umum.matrikscandi, fungsi_umum.banyakcandi = fungsi_umum.importcsv(path, 'candi.csv')
         fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan = fungsi_umum.importcsv(path, 'bahan_bangunan.csv')
+        fungsi_umum.matriksbahanbangunan[0][2] = int(fungsi_umum.matriksbahanbangunan[0][2])
+        fungsi_umum.matriksbahanbangunan[1][2] = int(fungsi_umum.matriksbahanbangunan[1][2])
+        fungsi_umum.matriksbahanbangunan[2][2] = int(fungsi_umum.matriksbahanbangunan[2][2])
 
 role = None
 while True:

@@ -9,7 +9,6 @@ OK:
 7. jinPengumpul
 8. batchKumpul
 10. ambilLaporanJin
-11. ambilLaporanCandi
 12. hancurkanCandi
 13. ayamBerkokok
 14. load
@@ -18,9 +17,5 @@ OK:
 17. exit
 
 semi OK:
-9. batchBangun
-- Mengerahkan 2 jin untuk membangun candi dengan total bahan 7 pasir, 3 batu, dan 3 air.
-Bangun gagal. Kurang 2 pasir, -2 batu, dan -2 air (perbaikin)
-
-yang blm OK:
-! tambahin exit di help
+10. ambilLaporanJin
+- leksikografis jintermalas

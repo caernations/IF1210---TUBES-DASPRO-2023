@@ -17,13 +17,13 @@ def jinPembangun():
     pasirneeded = random.randint(1, 5)
     batuneeded = random.randint(1, 5)
     airneeded = random.randint(1, 5)
-    
-    if (pasirneeded > fungsi_umum.intpasir) or (batuneeded > fungsi_umum.intpasir) or (airneeded > fungsi_umum.intair):
+
+    if (pasirneeded > fungsi_umum.matriksbahanbangunan[0][2]) or (batuneeded > fungsi_umum.matriksbahanbangunan[1][2]) or (airneeded > fungsi_umum.matriksbahanbangunan[2][2]):
         print("Bahan bangunan tidak mencukupi")
         print("Candi tidak bisa dibangun!")
     else:
         print(fungsi_umum.banyakcandi)
-        if fungsi_umum.banyakcandi > 100:
+        if fungsi_umum.banyakcandi >= 100:
             print("Candi berhasil dibangun!\nSisa candi yang perlu dibangun: 0")
         else:
             if fungsi_umum.banyakcandi == 0:
@@ -38,17 +38,11 @@ def jinPembangun():
                 
             fungsi_umum.banyakcandi += 1
             print("Candi berhasil dibangun!")
-            print(fungsi_umum.banyakcandi)
             print(f"Sisa candi yang perlu dibangun: {(100 - fungsi_umum.banyakcandi)}")
-            print(fungsi_umum.matrikscandi)
 
-        fungsi_umum.intpasir -= pasirneeded
-        fungsi_umum.intbatu -= batuneeded
-        fungsi_umum.intair -= airneeded
-
-        fungsi_umum.matriksbahanbangunan[0][2] = str(fungsi_umum.intpasir)
-        fungsi_umum.matriksbahanbangunan[1][2] = str(fungsi_umum.intbatu)
-        fungsi_umum.matriksbahanbangunan[2][2] = str(fungsi_umum.intair)
+        fungsi_umum.matriksbahanbangunan[0][2] -= pasirneeded
+        fungsi_umum.matriksbahanbangunan[1][2] -= batuneeded
+        fungsi_umum.matriksbahanbangunan[2][2] -= airneeded
 
     system('pause')
     system('cls')
@@ -65,15 +59,10 @@ def jinPengumpul():
     batufound = random.randint(0, 5)
     airfound = random.randint(0, 5)
 
-    # Menambahkan hasil jin pengumpul ke dalam jumlah awal bahan bangunan
-    fungsi_umum.intpasir += pasirfound
-    fungsi_umum.intbatu += batufound
-    fungsi_umum.intair += airfound
-
     # Assign nilai matriksbahanbangunan
-    fungsi_umum.matriksbahanbangunan[0][2] = str(fungsi_umum.intpasir)
-    fungsi_umum.matriksbahanbangunan[1][2] = str(fungsi_umum.intbatu)
-    fungsi_umum.matriksbahanbangunan[2][2] = str(fungsi_umum.intair)
+    fungsi_umum.matriksbahanbangunan[0][2] += pasirfound
+    fungsi_umum.matriksbahanbangunan[1][2] += batufound
+    fungsi_umum.matriksbahanbangunan[2][2] += airfound
 
     print(f"Jin {fungsi_umum.username} menemukan {pasirfound} pasir, {batufound} batu, dan {airfound} air.")
     system('pause')
@@ -102,18 +91,13 @@ def batchKumpul():
             pasirbatchkumpul += random.randint(0, 5)
             batubatchkumpul += random.randint(0, 5)
             airbatchkumpul += random.randint(0, 5)
-        
-        fungsi_umum.intpasir += pasirbatchkumpul
-        fungsi_umum.intbatu += batubatchkumpul
-        fungsi_umum.intair += airbatchkumpul
-
+            
         # Assign nilai matriksbahanbangunan
-        fungsi_umum.matriksbahanbangunan[0][2] = str(fungsi_umum.intpasir)
-        fungsi_umum.matriksbahanbangunan[1][2] = str(fungsi_umum.intbatu)
-        fungsi_umum.matriksbahanbangunan[2][2] = str(fungsi_umum.intair)
+        fungsi_umum.matriksbahanbangunan[0][2] += pasirbatchkumpul
+        fungsi_umum.matriksbahanbangunan[1][2] += batubatchkumpul
+        fungsi_umum.matriksbahanbangunan[2][2] += airbatchkumpul
 
         print(f"Jin menemukan total {pasirbatchkumpul} pasir, {batubatchkumpul} batu, dan {airbatchkumpul} air.")
-        print(fungsi_umum.matriksbahanbangunan)
 
     system('pause')
     system('cls')
@@ -129,7 +113,6 @@ def batchBangun():
     for i in range(1, fungsi_umum.banyakuser):
         if fungsi_umum.matriksuser[i][2] == "Jin_Pembangun":
             banyakjinpembangun += 1
-    print(banyakjinpembangun)
     if banyakjinpembangun == 0:
         print("Batch bangun gagal karena Anda tidak memiliki Jin Pembangun.\nSilahkan summon terlebih dahulu.")
     else:
@@ -142,8 +125,22 @@ def batchBangun():
             batuneeded += random.randint(1, 5)
             airneeded += random.randint(1, 5)
         print(f"Mengerahkan {banyakjinpembangun} jin untuk membangun candi dengan total bahan {pasirneeded} pasir, {batuneeded} batu, dan {airneeded} air.")
-        if (pasirneeded > fungsi_umum.intpasir) or (batuneeded > fungsi_umum.intpasir) or (airneeded > fungsi_umum.intair):
-            print(f"Bangun gagal. Kurang {pasirneeded - fungsi_umum.intpasir} pasir, {batuneeded - fungsi_umum.intbatu} batu, dan {airneeded - fungsi_umum.intair} air")
+        system('pause')
+        system('cls')
+        if (pasirneeded > fungsi_umum.matriksbahanbangunan[0][2]) and (batuneeded > fungsi_umum.matriksbahanbangunan[0][2]) and (airneeded > fungsi_umum.matriksbahanbangunan[2][2]):
+            print(f"Bangun gagal. Kurang {pasirneeded - fungsi_umum.matriksbahanbangunan[0][2]} pasir, {batuneeded - fungsi_umum.matriksbahanbangunan[1][2]} batu, dan {airneeded - fungsi_umum.matriksbahanbangunan[2][2]} air")
+        elif (pasirneeded > fungsi_umum.matriksbahanbangunan[0][2]) and (batuneeded > fungsi_umum.matriksbahanbangunan[0][2]):
+            print(f"Bangun gagal. Kurang {pasirneeded - fungsi_umum.matriksbahanbangunan[0][2]} pasir dan {batuneeded - fungsi_umum.matriksbahanbangunan[1][2]} batu")
+        elif (pasirneeded > fungsi_umum.matriksbahanbangunan[0][2]) and (airneeded > fungsi_umum.matriksbahanbangunan[2][2]):
+            print(f"Bangun gagal. Kurang {pasirneeded - fungsi_umum.matriksbahanbangunan[0][2]} pasir dan {airneeded - fungsi_umum.matriksbahanbangunan[2][2]} air")
+        elif (batuneeded > fungsi_umum.matriksbahanbangunan[0][2]) and (airneeded > fungsi_umum.matriksbahanbangunan[2][2]):
+            print(f"Bangun gagal. Kurang {batuneeded - fungsi_umum.matriksbahanbangunan[1][2]} batu dan {airneeded - fungsi_umum.matriksbahanbangunan[2][2]} air")
+        elif (pasirneeded > fungsi_umum.matriksbahanbangunan[0][2]):
+            print(f"Bangun gagal. Kurang {pasirneeded - fungsi_umum.matriksbahanbangunan[0][2]} pasir")
+        elif (batuneeded > fungsi_umum.matriksbahanbangunan[0][2]):
+            print(f"Bangun gagal. Kurang {batuneeded - fungsi_umum.matriksbahanbangunan[1][2]} batu")
+        elif (airneeded > fungsi_umum.matriksbahanbangunan[2][2]):
+            print(f"Bangun gagal. Kurang {airneeded - fungsi_umum.matriksbahanbangunan[2][2]} air")
         else:
             if fungsi_umum.banyakcandi > 100:
                 print("Candi berhasil dibangun!\nSisa candi yang perlu dibangun: 0")
@@ -164,15 +161,10 @@ def batchBangun():
                                         fungsi_umum.matrikscandi = fungsi_umum.insertlist(fungsi_umum.matrikscandi,j+1,[j+2, username, pasirneeded, batuneeded, airneeded],fungsi_umum.banyakcandi)
                                         break
                             fungsi_umum.banyakcandi += 1
-            print(fungsi_umum.matrikscandi)
             print(f"Jin berhasil membangun total {banyakjinpembangun} candi.")
-            fungsi_umum.intpasir -= pasirneeded
-            fungsi_umum.intbatu -= batuneeded
-            fungsi_umum.intair -= airneeded
-
-            fungsi_umum.matriksbahanbangunan[0][2] = str(fungsi_umum.intpasir)
-            fungsi_umum.matriksbahanbangunan[1][2] = str(fungsi_umum.intbatu)
-            fungsi_umum.matriksbahanbangunan[2][2] = str(fungsi_umum.intair)
+            fungsi_umum.matriksbahanbangunan[0][2] -= pasirneeded
+            fungsi_umum.matriksbahanbangunan[1][2] -= batuneeded
+            fungsi_umum.matriksbahanbangunan[2][2] -= airneeded
     system('pause')
     system('cls')
 
@@ -187,7 +179,7 @@ def hancurkanCandi():
     found = False
 
     for i in range (fungsi_umum.banyakcandi):
-        if (fungsi_umum.matrikscandi[i][0] == idhancurkancandi):
+        if fungsi_umum.matrikscandi[i][0] == str(idhancurkancandi):
             found = True
             break
     if (found):
@@ -197,7 +189,6 @@ def hancurkanCandi():
             fungsi_umum.matrikscandi = fungsi_umum.removelist(fungsi_umum.matrikscandi, i, fungsi_umum.banyakcandi)
             fungsi_umum.banyakcandi -= 1
             print("Candi telah berhasil dihancurkan.")
-            print(fungsi_umum.matrikscandi)
         else:
             print("Candi gagal dihancurkan.")
     else:

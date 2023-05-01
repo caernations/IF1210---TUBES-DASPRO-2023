@@ -5,9 +5,6 @@ import modul_laporan
 import os
 import argparse
 from os import system
-from datetime import datetime as dt
-import fungsi_umum
-import fungsi_umum
 
 # F01 - LOGIN
 # F02 - LOGOUT
@@ -104,18 +101,11 @@ def save(data, filename, foldername):
         f.write(data)
 
 
-# # F15 - LOAD
-# def load(folder):
-
-        
-
-
-
 # F16 - HELP
 def help(role):
     if role == "Bandung_Bondowoso":
         while True:
-            print("1. Summon Jin\n2. Hilangkan Jin\n3. Ubah Tipe Jin\n4. Batch Kumpul\n5. Batch Bangun\n6. Ambil Laporan Jin\n7. Ambil Laporan Candi\n8. Save\n9. Logout")
+            print("1. Summon Jin\n2. Hilangkan Jin\n3. Ubah Tipe Jin\n4. Batch Kumpul\n5. Batch Bangun\n6. Ambil Laporan Jin\n7. Ambil Laporan Candi\n8. Save\n9. Logout\n10. Exit")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Summon Jin":
                 modul_jin.summonJin()
@@ -144,7 +134,6 @@ def help(role):
                 system('pause')
                 system('cls')
                 for i in range(3):
-                    print(listfile[i])
                     save(listfile[i], listfilename[i], foldername)
                 print(f"Berhasil menyimpan data di folder 'save/{foldername}'!\n")
                 system('pause')
@@ -152,6 +141,8 @@ def help(role):
             elif command == "9" or command == "Logout":
                 logout()
                 break
+            elif command == "10" or command == "Exit":
+                exitprogram()
             elif command == "Login":
                 system('cls')
                 print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
@@ -164,7 +155,7 @@ def help(role):
 
     elif role == "Roro_Jonggrang":
         while True:
-            print("1. Hancurkan Candi\n2. Ayam Berkokok\n3. Save\n4. Logout")
+            print("1. Hancurkan Candi\n2. Ayam Berkokok\n3. Save\n4. Logout\n5. Exit")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Hancurkan Candi":
                 modul_candi.hancurkanCandi()
@@ -190,6 +181,8 @@ def help(role):
             elif command == "4" or command == "Logout":
                 logout()
                 break
+            elif command == "5" or command == "Exit":
+                exitprogram()
             elif command == "Login":
                 system('cls')
                 print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
@@ -212,7 +205,7 @@ def help(role):
 
     elif role == "Jin_Pengumpul":
         while True:
-            print("1. Jin Pengumpul\n2. Save\n3. Logout")
+            print("1. Jin Pengumpul\n2. Save\n3. Logout\n4. Exit")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Jin Pengumpul":
                 modul_candi.jinPengumpul()
@@ -236,6 +229,8 @@ def help(role):
             elif command == "3" or command == "Logout":
                 logout()
                 break
+            elif command == "4" or command == "Exit":
+                exitprogram()
             elif command == "Login":
                 system('cls')
                 print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")
@@ -258,7 +253,7 @@ def help(role):
 
     elif role == "Jin_Pembangun":
         while True:
-            print("1. Jin Pembangun\n2. Save\n3. Logout")
+            print("1. Jin Pembangun\n2. Save\n3. Logout\n4. Exit")
             command = str(input("\nPlease type a command:\n>> ")).title()
             if command == "1" or command == "Jin Pembangun":
                 modul_candi.jinPembangun()
@@ -282,6 +277,8 @@ def help(role):
             elif command == "3" or command == "Logout":
                 logout()
                 break
+            elif command == "4" or command == "Exit":
+                exitprogram()
             elif command == "Login":
                 system('cls')
                 print(f"Login gagal!\nAnda telah login dengan username {fungsi_umum.username}, silahkan lakukan 'logout' sebelum melakukan login kembali.")

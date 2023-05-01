@@ -33,18 +33,24 @@ def ambilLaporanJin():
             if candiowned > candiownedterbanyak:
                 jinterajin = fungsi_umum.matriksuser[i][0]
                 candiownedterbanyak = candiowned
+            if candiowned == candiownedterbanyak:
+                if fungsi_umum.matriksuser[i][0] < jinterajin:
+                    jinterajin = fungsi_umum.matriksuser[i][0]
             if candiowned < candiownedtersedikit:
                 jintermalas = fungsi_umum.matriksuser[i][0]
                 candiownedtersedikit = candiowned
+            if candiowned == candiownedtersedikit:
+                if fungsi_umum.matriksuser[i][0] > jintermalas:
+                    jintermalas = fungsi_umum.matriksuser[i][0]
             
     print(f"""Total Jin\t\t: {(fungsi_umum.banyakuser - 2)}
 Total Jin Pengumpul\t: {totaljinpengumpul}
 Total Jin Pembangun\t: {totaljinpembangun}
 Jin Terajin\t\t: {jinterajin}
 Jin Termalas\t\t: {jintermalas}
-Jumlah Pasir\t\t: {fungsi_umum.intpasir}
-Jumlah Batu\t\t: {fungsi_umum.intbatu}
-Jumlah Air\t\t: {fungsi_umum.intair}
+Jumlah Pasir\t\t: {fungsi_umum.matriksbahanbangunan[0][2]}
+Jumlah Batu\t\t: {fungsi_umum.matriksbahanbangunan[1][2]}
+Jumlah Air\t\t: {fungsi_umum.matriksbahanbangunan[2][2]}
 """)
     system('pause')
     system('cls')
@@ -88,8 +94,8 @@ def ambilLaporanCandi():
 Total Pasir yang Digunakan\t: {totalpasir}
 Total Batu yang Digunakan\t: {totalbatu}
 Total Air yang Digunakan\t: {totalair}
-ID Candi Termahal\t\t: {idcanditermahal}
-ID Candi Termurah\t\t: {idcanditermurah}
+ID Candi Termahal\t\t: {idcanditermahal} (Rp {format(hargacanditermahal, ',').replace(',', '.')})
+ID Candi Termurah\t\t: {idcanditermurah} (Rp {format(hargacanditermurah, ',').replace(',', '.')})
 """)
     system('pause')
     system('cls')
