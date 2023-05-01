@@ -37,7 +37,6 @@ def insertlist(list1, indeks, elemen, lenlist1):
     return list2
 
 
-
 def lenarr(arr):
     # Fungsi untuk menghitung panjang array
     length = 0
@@ -63,9 +62,9 @@ def splitstr(str, sep):
     return list1
 
     
-def importcsv(filename, delimeter = ';'):
+def importcsv(folder, filename, delimeter = ';'):
     # Fungsi Untuk membaca file CSV
-    file = open(f'./save/default/{filename}', 'r')
+    file = open(f'./save/{folder}/{filename}', 'r')
     dataframe = []
     row = 0
     file.readline()
@@ -91,9 +90,9 @@ def joinstr(matriks, lenmatriks, rowmatriks, separator=';', header = ''):
 
 # VARIABLE
 username = None
-matriksuser, banyakuser = importcsv('user.csv', delimeter=";")
-matrikscandi, banyakcandi = importcsv('candi.csv', delimeter=";")
-matriksbahanbangunan, banyakbahanbangunan = importcsv('bahan_bangunan.csv', delimeter=";")
+matriksuser, banyakuser = importcsv('default', 'user.csv', delimeter=";")
+matrikscandi, banyakcandi = importcsv('default', 'candi.csv', delimeter=";")
+matriksbahanbangunan, banyakbahanbangunan = importcsv('default','bahan_bangunan.csv', delimeter=";")
 
 intpasir = int(matriksbahanbangunan[0][2])
 intbatu = int(matriksbahanbangunan[1][2])

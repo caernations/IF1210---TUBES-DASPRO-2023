@@ -12,6 +12,7 @@ OK:
 11. ambilLaporanCandi
 12. hancurkanCandi
 13. ayamBerkokok
+14. load
 15. save
 16. help
 17. exit
@@ -22,7 +23,4 @@ semi OK:
 Bangun gagal. Kurang 2 pasir, -2 batu, dan -2 air (perbaikin)
 
 yang blm OK:
-14. load
-
-
 ! tambahin exit di help

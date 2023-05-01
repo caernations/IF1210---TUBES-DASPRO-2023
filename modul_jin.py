@@ -76,7 +76,6 @@ def summonJin():
             password = input("Masukkan password jin:\n> ")
         fungsi_umum.matriksuser = fungsi_umum.appendlist(fungsi_umum.matriksuser, [usernamejin, password, "Jin_Pembangun"], fungsi_umum.banyakuser)
         fungsi_umum.banyakuser += 1
-        print(fungsi_umum.matriksuser)
 
     system('pause')
     system('cls')
@@ -100,7 +99,7 @@ def hilangkanJin() :
     found = False
     usernamejin = input("Masukkan username jin:\n>> ")
     system('cls')
-    for i in range (3, fungsi_umum.banyakuser) :
+    for i in range (2, fungsi_umum.banyakuser) :
         if fungsi_umum.matriksuser[i][2] == "Jin_Pengumpul" or fungsi_umum.matriksuser[i][2] == "Jin_Pembangun":
             if fungsi_umum.matriksuser[i][0] == usernamejin:
                 found = True

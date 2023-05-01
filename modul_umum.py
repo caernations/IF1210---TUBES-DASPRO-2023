@@ -3,6 +3,7 @@ import modul_jin
 import modul_candi
 import modul_laporan
 import os
+import argparse
 from os import system
 from datetime import datetime as dt
 import fungsi_umum
@@ -103,7 +104,11 @@ def save(data, filename, foldername):
         f.write(data)
 
 
-# F15 - LOAD
+# # F15 - LOAD
+# def load(folder):
+
+        
+
 
 
 # F16 - HELP
@@ -131,7 +136,7 @@ def help(role):
                 filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
                 filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
                 listfile = [fileuser, filecandi, filebahanbangunan]
-                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
+                listfilename = ["user.csv", "candi.csv", "bahan_bangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -170,7 +175,7 @@ def help(role):
                 filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
                 filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
                 listfile = [fileuser, filecandi, filebahanbangunan]
-                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
+                listfilename = ["user.csv", "candi.csv", "bahan_bangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -216,7 +221,7 @@ def help(role):
                 filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
                 filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
                 listfile = [fileuser, filecandi, filebahanbangunan]
-                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
+                listfilename = ["user.csv", "candi.csv", "bahan_bangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -262,7 +267,7 @@ def help(role):
                 filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
                 filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
                 listfile = [fileuser, filecandi, filebahanbangunan]
-                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
+                listfilename = ["user.csv", "candi.csv", "bahan_bangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -310,7 +315,7 @@ def help(role):
                 filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
                 filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
                 listfile = [fileuser, filecandi, filebahanbangunan]
-                listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
+                listfilename = ["user.csv", "candi.csv", "bahan_bangunan.csv"]
                 system('pause')
                 system('cls')
                 foldername = input("Masukkan nama folder:\n>>  ")
@@ -344,7 +349,7 @@ def exitprogram():
             filecandi = fungsi_umum.joinstr(fungsi_umum.matrikscandi, fungsi_umum.banyakcandi, rowmatriks = 5, header = fungsi_umum.headermatrikscandi)
             filebahanbangunan = fungsi_umum.joinstr(fungsi_umum.matriksbahanbangunan, fungsi_umum.banyakbahanbangunan, rowmatriks = 3, header = fungsi_umum.headermatriksbahanbangunan)
             listfile = [fileuser, filecandi, filebahanbangunan]
-            listfilename = ["user.csv", "candi.csv", "bahanbangunan.csv"]
+            listfilename = ["user.csv", "candi.csv", "bahan_bangunan.csv"]
             system('pause')
             system('cls')
             foldername = input("Masukkan nama folder:\n>>  ")
