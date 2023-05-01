@@ -78,7 +78,7 @@ def ayamBerkokok():
     system('cls')
     
     if(fungsi_umum.banyakcandi < 100):
-        print("""*Bandung Bondowoso angry noise*
+        print("""Selamat, Roro Jonggrang memenangkan permainan!\n*Bandung Bondowoso angry noise*
 Roro Jonggrang dikutuk menjadi candi.\n""")
     else:
         print("Yah, Bandung Bondowoso memenangkan permainan!\n")
@@ -360,8 +360,8 @@ def exitprogram():
             system('cls')
             exit()
         elif wanttosave == "N":
-            system('pause')
-            system('cls')
+            # system('pause')
+            # system('cls')
             exit()
         else:
             system('cls')

@@ -22,7 +22,6 @@ def jinPembangun():
         print("Bahan bangunan tidak mencukupi")
         print("Candi tidak bisa dibangun!")
     else:
-        print(fungsi_umum.banyakcandi)
         if fungsi_umum.banyakcandi >= 100:
             print("Candi berhasil dibangun!\nSisa candi yang perlu dibangun: 0")
         else:
